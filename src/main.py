@@ -1,10 +1,15 @@
 import asyncio
 import os
+from pathlib import Path
 
 import pandas as pd
 import plotly.express as px
 import streamlit as st
 import httpx
+from dotenv import load_dotenv
+
+PROJECT_ROOT = Path(__file__).parent.parent
+load_dotenv(f"{PROJECT_ROOT}/.env")
 
 # Базовый URL вашего API бэкенда
 API_BASE_URL = os.getenv("API_URL")
